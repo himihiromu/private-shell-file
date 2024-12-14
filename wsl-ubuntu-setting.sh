@@ -42,6 +42,8 @@ function docker_install () {
     # Dockerのインスコ
     sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+    # dockerをsudo無しで実行できるようにする
+    sudo gpasswd -a $USER docker
 }
 
 function k3s_install () {
