@@ -50,8 +50,6 @@ function k3s_install () {
 
 
 while getopts ":dk-:" opt; do
-    echo "$opt"
-    echo "${OPTARG}"
     if [ "$opt" = - ]; then
         opt="${OPTARG}"
     fi
