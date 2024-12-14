@@ -21,7 +21,7 @@ echo "nameserver 8.8.8.8" | tee /etc/resolv.conf
 # 基本の'き'
 apt-get update
 # 下記の処理の事前対応として
-apt-get install ca-certificates curl
+apt-get install -y ca-certificates curl
 
 function docker_install () {
 
@@ -40,7 +40,7 @@ function docker_install () {
     sudo apt-get update
 
     # Dockerのインスコ
-    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 }
 
@@ -65,4 +65,4 @@ while getopts ":dk-:" opt; do
         esac
 done
 
-
+apt-get upgrade -y
