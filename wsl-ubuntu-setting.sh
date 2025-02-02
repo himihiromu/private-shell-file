@@ -25,6 +25,7 @@ apt-get install -y ca-certificates curl
 
 function docker_install () {
 
+
     # Docker install (公式サイトのコピペ)
     install -m 0755 -d /etc/apt/keyrings
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -50,6 +51,10 @@ function k3s_install () {
     curl -sfL https://get.k3s.io | sh -
 }
 
+function nix_install () {
+    curl -L https://nixos.org/nix/install | sh
+}
+
 
 while getopts ":dk-:" opt; do
     if [ "$opt" = - ]; then
@@ -62,7 +67,11 @@ while getopts ":dk-:" opt; do
             k|k3s-install)
                 k3s_install
                 ;;
+            n|nix-install)
+                nix_install
+                ;;
         esac
 done
 
 apt-get upgrade -y
+
