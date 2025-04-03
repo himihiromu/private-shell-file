@@ -12,5 +12,5 @@ sudo apt install -y curl ca-certificates
 ### shellで実行
 
 ```bash
-curl -sf https://raw.githubusercontent.com/shimajima-eiji/Chocolatey/master/wsl/update_CHANGELOG.sh | sh -s -- $GITHUB_TOKEN
+curl -sf https://raw.githubusercontent.com/himihiromu/private-shell-file/refs/heads/feat-pixel-setting/pixel-setting.sh | sh -s -- $GITHUB_TOKEN
 ```
