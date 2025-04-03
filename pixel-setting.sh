@@ -29,7 +29,7 @@ sudo apt-get update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin gh
 
 # nix install
-sh <(curl -L https://nixos.org/nix/install) --daemon
+curl -sf https://nixos.org/nix/install | sh -s -- --daemon
 
 # git setup
 gh auth login --with-token < $0
